@@ -4,8 +4,10 @@ mkdir -p backups mount
 BACKUP_FILE=backups/$1.zip
 
 ifuse mount --container $1
+sleep 1
 cd mount
-  unzip ../$BACKUP_FILE
+  unzip -o ../$BACKUP_FILE
+  ls -l Library/Preferences
 cd -
 umount mount
 

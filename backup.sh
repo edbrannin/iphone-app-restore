@@ -4,8 +4,8 @@ mkdir -p backups mount
 BACKUP_FILE=backups/$1.zip
 
 ifuse mount --container $1
+sleep 1
 cd mount
-  echo zip -vr ../$BACKUP_FILE Documents Library
   zip -vr ../$BACKUP_FILE Documents Library
 cd -
 umount mount
